@@ -176,7 +176,7 @@
         <img id="car_1" src="./assets/reality_two/car1.png" />
         <img id="sms_logo" src="./assets/reality_two/sms.png" />
         <img id="tree_logo" src="./assets/reality_two/tree 3.png" />
-
+        <a-asset-item id="man" src="./assets/models/man.glb"></a-asset-item>
         <a-asset-item id="sitar" src="./assets/sitar.glb"></a-asset-item>
         <video
           id="reality-video"
@@ -185,10 +185,24 @@
           muted
           src="./assets/reality.mp4"
         ></video>
+        <a-mixin
+          id="animated"
+          animation="property: position; to: 0 0 0.2; dur: 600; easing: easeInOutQuad; loop: true; dir: alternate"
+        ></a-mixin>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       <a-entity mindar-image-target="targetIndex: 0">
+        <a-entity
+          id="man"
+          gltf-model="#man"
+          rotation="0 0 0"
+          position="0 0 0"
+          scale="0.1 0.1 0.1"
+          gesture-handler
+          animation-mixer
+          mixin="animated"
+        ></a-entity>
         <a-image
           src="#car"
           position="0.26 0.01 -0.1"
