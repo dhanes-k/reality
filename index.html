@@ -4,8 +4,8 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
-    <script src="gesture-detector.js"></script>
-    <script src="gesture-handler.js"></script>
+    <script src="./gesture-detector.js"></script>
+    <script src="./gesture-handler.js"></script>
   </head>
   <style>
     #example-scanning-overlay {
@@ -141,6 +141,8 @@
       fix-legacy-lights
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
+      gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/"
+      gesture-detector
     >
       <a-assets>
         <img id="van" src="./assets/imges/dhanush trail.png" />
