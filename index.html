@@ -4,6 +4,8 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
   </head>
   <style>
     #example-scanning-overlay {
@@ -80,7 +82,7 @@
       align-items: center;
     }
 
-    #reality_logo{
+    #reality_logo {
       animation: fromDown 0.6s linear 3s;
     }
 
@@ -103,7 +105,6 @@
         transform: translate(6000px);
       }
     }
-
 
     @keyframes fromDown {
       0% {
@@ -130,11 +131,11 @@
     </div>
 
     <div id="splash">
-      <img id="reality_logo" src="./assets/imges/reality_logo.png" alt="">
+      <img id="reality_logo" src="./assets/imges/reality_logo.png" alt="" />
     </div>
 
     <a-scene
-      mindar-image="uiScanning: #example-scanning-overlay; imageTargetSrc: ./targets.mind/reality.mind;"
+      mindar-image="uiScanning: #example-scanning-overlay; imageTargetSrc: ./targets.mind/reality_two.mind;"
       color-space="sRGB"
       renderer="colorManagement: true; physicallyCorrectLights: true"
       fix-legacy-lights
@@ -162,6 +163,20 @@
         <img id="dron" src="./assets/imges/dron.png" />
         <img id="curved_arrow" src="./assets/imges/curved_arrow.png" />
         <img id="reality" src="./assets/imges/reality.png" />
+        <img id="pool" src="./assets/reality_two/pool.png" />
+        <img id="db" src="./assets/reality_two/database.png" />
+        <img id="cloud" src="./assets/reality_two/cloud.png" />
+        <img id="tree_1" src="./assets/reality_two/tree 1.png" />
+        <img id="tree_2" src="./assets/reality_two/tree 2.png" />
+        <img id="tree_3" src="./assets/reality_two/tree 3.png" />
+        <img id="building_2" src="./assets/reality_two/building 1.png" />
+        <img id="b_coin" src="./assets/reality_two/bit coin.png" />
+        <img id="car_2" src="./assets/reality_two/car2.png" />
+        <img id="location_2" src="./assets/reality_two/location.png" />
+        <img id="car_1" src="./assets/reality_two/car1.png" />
+        <img id="sms_logo" src="./assets/reality_two/sms.png" />
+        <img id="tree_logo" src="./assets/reality_two/tree 3.png" />
+
         <a-asset-item id="sitar" src="./assets/sitar.glb"></a-asset-item>
         <video
           id="reality-video"
@@ -297,6 +312,177 @@
           height="1"
         ></a-image>
       </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-image
+          src="#pool"
+          position="-0.451 -0.0150 0"
+          scale="0.06 0.04 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#db"
+          position="-0.39 0.02 0"
+          scale="0.05 0.07 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#cloud"
+          position="-0.344 0.084 0"
+          scale="0.04 0.04 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_1"
+          position="-0.382 0.076 0"
+          scale="0.03 0.03 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#building_2"
+          position="-0.29 -0.12 0"
+          scale="0.13 0.07 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_2"
+          position="-0.451 -0.108 0"
+          scale="0.02 0.03 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_1"
+          position="-0.284 -0.064 0"
+          scale="0.03 0.03 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_2"
+          position="-0.316 0.018 0"
+          scale="0.032 0.04 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_3"
+          position="-0.17 -0.06 0"
+          scale="0.02 0.03 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_3"
+          position="-0.134 -0.084 0"
+          scale="0.012 0.02 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#b_coin"
+          position="-0.136 0.033 0"
+          scale="0.04 0.03 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_3"
+          position="-0.145 -0.092 0"
+          scale="0.0126 0.024 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_3"
+          position="-0.10 0.127 0"
+          scale="0.014 0.026 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_3"
+          position="-0.136 0.1 0"
+          scale="0.014 0.032 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#car_2"
+          position="0.028 0.08 0"
+          scale="0.05 0.04 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#location_2"
+          position="0.08 0.12 0"
+          scale="0.024 0.032 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_2"
+          position="0.07 0.086 0"
+          scale="0.024 0.032 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_1"
+          position="0.222 0.0564 0"
+          scale="0.022 0.026 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#location_2"
+          position="0.21 0.086 0"
+          scale="0.018 0.024 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#location_2"
+          position="0.39 0.088 0"
+          scale="0.024 0.03 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_3"
+          position="0.23 0.098 0"
+          scale="0.018 0.026 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#car_1"
+          position="0.28 0.022 0"
+          scale="0.05 0.036 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#sms_logo"
+          position="0.255 -0.11 0"
+          scale="0.03 0.036 0"
+          width="1"
+          height="1"
+        ></a-image>
+        <a-image
+          src="#tree_logo"
+          position="0.2 -0.11 0"
+          scale="0.015 0.015 0"
+          width="1"
+          height="1"
+        ></a-image>
+      </a-entity>
     </a-scene>
 
     <script>
@@ -313,9 +499,9 @@
         setTimeout(() => {
           document.getElementById("splash").style.display = "none";
         }, 6000);
-        
+
         // setTimeout(()=>{
-        //   document.getElementById("example-scanning-overlay").style.display = "flex";          
+        //   document.getElementById("example-scanning-overlay").style.display = "flex";
         // },6000)
       });
     </script>
